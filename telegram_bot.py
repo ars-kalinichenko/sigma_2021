@@ -6,9 +6,13 @@ from aiogram.utils import executor
 from dostoevsky.models import FastTextSocialNetworkModel
 from dostoevsky.tokenization import RegexTokenizer
 
+# Get the key from environment variables
 API_TOKEN = os.environ.get("TOKEN")
+
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
+
+# Create model for sentiment analysis
 tokenizer = RegexTokenizer()
 model = FastTextSocialNetworkModel(tokenizer=tokenizer)
 
